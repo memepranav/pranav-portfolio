@@ -1,0 +1,34 @@
+{
+  "projects": [
+    {
+      "id": "project-1",
+      "title": "Glassmorphism Landing Page",
+      "description": "A beautiful landing page with glassmorphism effects and smooth animations",
+      "folder": "project-1",
+      "tags": ["HTML", "CSS", "JavaScript", "Glassmorphism"],
+      "featured": true,
+      "thumbnail": "screenshot.png",
+      "liveUrl": "/html-projects/project-1/index.html"
+    },
+    {
+      "id": "project-2",
+      "title": "Interactive Dashboard",
+      "description": "A responsive dashboard with charts and interactive elements",
+      "folder": "project-2",
+      "tags": ["HTML", "CSS", "JavaScript", "Dashboard"],
+      "featured": false,
+      "thumbnail": "screenshot.png",
+      "liveUrl": "/html-projects/project-2/index.html"
+    },
+    {
+      "id": "project-3",
+      "title": "Portfolio Website",
+      "description": "A clean and modern portfolio website template",
+      "folder": "project-3",
+      "tags": ["HTML", "CSS", "Responsive", "Portfolio"],
+      "featured": false,
+      "thumbnail": "screenshot.png",
+      "liveUrl": "/html-projects/project-3/index.html"
+    }
+  ]
+}

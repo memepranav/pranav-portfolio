@@ -1,0 +1,29 @@
+{
+  "name": "futuristic-portfolio",
+  "version": "1.0.0",
+  "description": "A modern, futuristic portfolio web app with React frontend and Node.js backend",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "setup": "npm run install:all && echo 'Setup complete! Run npm run dev to start development servers.'"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "nodejs",
+    "mongodb",
+    "tailwindcss",
+    "framer-motion",
+    "futuristic",
+    "glassmorphism"
+  ],
+  "author": "Pranav",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
