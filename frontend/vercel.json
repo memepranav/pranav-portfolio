@@ -1,30 +1,24 @@
 {
-  "version": 2,
-  "builds": [
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "framework": "vite",
+  "rewrites": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
+      "source": "/dark-gothic/(.*)",
+      "destination": "/dark-gothic/$1"
     },
     {
-      "src": "../backend/server.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "../backend/server.js"
+      "source": "/demon-slayer/(.*)",
+      "destination": "/demon-slayer/$1"
     },
     {
-      "src": "/html-projects/(.*)",
-      "dest": "/html-projects/$1"
+      "source": "/one-piece/(.*)",
+      "destination": "/one-piece/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }

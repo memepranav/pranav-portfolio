@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ExternalLink, Github, Mail, ChevronDown, Instagram, Youtube, MessageCircle, Phone, Gamepad2 } from 'lucide-react'
-import { projectsAPI } from '../utils/api'
+import { projects } from '../data/projects'
 import ProjectCard from '../components/ProjectCard'
 import Hero from '../components/Hero'
 import Navigation from '../components/Navigation'
 import ContactSection from '../components/ContactSection'
-import toast from 'react-hot-toast'
 
 const Portfolio = () => {
-  const [projects, setProjects] = useState([])
+  const [projectsData] = useState(projects.sort((a, b) => {
+    // Sort by featured first, then by order, then by creation date
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+    if (a.order !== b.order) return a.order - b.order;
+    return new Date(b.createdAt) - new Date(a.createdAt);
+  }))
   const [loading, setLoading] = useState(true)
   const { scrollYProgress } = useScroll()
   
@@ -18,22 +23,13 @@ const Portfolio = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0])
 
   useEffect(() => {
-    fetchProjects()
-  }, [])
-
-  const fetchProjects = async () => {
-    try {
-      const response = await projectsAPI.getAll()
-      if (response.data.success) {
-        setProjects(response.data.data)
-      }
-    } catch (error) {
-      console.error('Failed to fetch projects:', error)
-      toast.error('Failed to load projects')
-    } finally {
+    // Simulate loading for smooth UX
+    const timer = setTimeout(() => {
       setLoading(false)
-    }
-  }
+    }, 500)
+    
+    return () => clearTimeout(timer)
+  }, [])
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
@@ -314,7 +310,7 @@ const Portfolio = () => {
                 </div>
               ))}
             </div>
-          ) : projects.length > 0 ? (
+          ) : projectsData.length > 0 ? (
             <motion.div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               initial="hidden"
@@ -330,7 +326,7 @@ const Portfolio = () => {
                 }
               }}
             >
-              {projects.map((project, index) => (
+              {projectsData.map((project, index) => (
                 <ProjectCard 
                   key={project._id} 
                   project={project} 
