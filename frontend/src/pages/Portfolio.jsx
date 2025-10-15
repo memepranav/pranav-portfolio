@@ -197,27 +197,6 @@ const Portfolio = () => {
                 ))}
               </div>
               
-              <div className="flex justify-center gap-6">
-                {[
-                  { icon: Instagram, href: 'https://instagram.com/your_username', label: 'Instagram', color: 'hover:text-pink-400' },
-                  { icon: Youtube, href: 'https://youtube.com/@your_channel', label: 'YouTube', color: 'hover:text-red-400' },
-                  { icon: MessageCircle, href: 'https://wa.me/your_number', label: 'WhatsApp', color: 'hover:text-green-400' },
-                  { icon: Gamepad2, href: 'https://discord.gg/your_server', label: 'Discord', color: 'hover:text-indigo-400' }
-                ].map(({ icon: Icon, href, label, color }) => (
-                  <motion.a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-3 glass-dark rounded-full hover:shadow-glow transition-all duration-300 ${color}`}
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    aria-label={label}
-                  >
-                    <Icon className="w-6 h-6 text-black transition-colors duration-300" />
-                  </motion.a>
-                ))}
-              </div>
             </div>
           </motion.div>
         </div>
