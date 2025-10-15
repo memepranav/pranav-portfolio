@@ -27,13 +27,17 @@ const Navigation = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId.replace('#', ''))
     if (element) {
-      // Different offsets for better centering
+      // Better offsets for proper visibility
       let headerHeight = 100
       
       if (sectionId === 'contact') {
-        headerHeight = 60 // Even less offset to move contact section up more
-      } else if (sectionId === 'about' || sectionId === 'projects') {
-        headerHeight = 120 // Slightly more for other sections
+        headerHeight = 60 // Less offset for contact section
+      } else if (sectionId === 'about') {
+        headerHeight = 140 // More space for about section
+      } else if (sectionId === 'projects') {
+        headerHeight = 160 // Even more space for projects section to show title properly
+      } else if (sectionId === 'hero') {
+        headerHeight = 0 // No offset for hero section
       }
       
       const elementPosition = element.offsetTop
