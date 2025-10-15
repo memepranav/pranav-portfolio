@@ -34,7 +34,7 @@ const ProjectCard = ({ project, index }) => {
       className="group relative"
     >
       <motion.div
-        className="glass rounded-2xl p-4 sm:p-6 h-full border border-white/5 hover:border-primary-500/30 transition-all duration-500 overflow-hidden"
+        className="glass rounded-2xl p-4 sm:p-6 h-full border border-white/5 transition-all duration-500 overflow-hidden"
         whileHover={{ 
           y: -8,
           transition: { duration: 0.3, ease: "easeOut" }
@@ -77,7 +77,7 @@ const ProjectCard = ({ project, index }) => {
             )}
             {project.underConstruction && (
               <motion.div
-                className="px-2 py-1 bg-orange-500/90 backdrop-blur-sm rounded-full text-xs font-medium text-white"
+                className="px-2 py-1 bg-amber-600/90 backdrop-blur-sm rounded-full text-xs font-medium text-white shadow-lg"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.3 }}
@@ -92,7 +92,7 @@ const ProjectCard = ({ project, index }) => {
         <div className="space-y-4">
           {/* Title and Date */}
           <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 sm:gap-4">
-            <h3 className="text-lg sm:text-xl font-semibold text-white group-hover:text-primary-400 transition-colors duration-300 leading-tight">
+            <h3 className="text-lg sm:text-xl font-semibold text-white leading-tight">
               {project.title}
             </h3>
             {project.createdAt && (
