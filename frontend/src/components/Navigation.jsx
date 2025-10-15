@@ -59,11 +59,12 @@ const Navigation = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center h-20 relative">
+          <div className="flex items-center h-16 sm:h-20 relative">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link to="/" className="text-2xl font-medium text-gray-800 tracking-wide" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                Pranav's Portfolio
+              <Link to="/" className="text-lg sm:text-2xl font-medium text-gray-800 tracking-wide" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                <span className="hidden sm:inline">Pranav's Portfolio</span>
+                <span className="sm:hidden">Pranav</span>
               </Link>
             </div>
 
@@ -112,7 +113,7 @@ const Navigation = () => {
             <div className="md:hidden">
               <motion.button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-3 rounded-md text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 flex items-center justify-center"
+                className="p-2 sm:p-3 rounded-md text-gray-600 hover:text-gray-800 hover:bg-gray-100 transition-all duration-300 flex items-center justify-center"
                 whileTap={{ scale: 0.95 }}
               >
                 {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

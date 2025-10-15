@@ -67,7 +67,7 @@ const Portfolio = () => {
       </motion.section>
 
       {/* About Section */}
-      <section id="about" className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section id="about" className="relative pt-20 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Abstract Background Elements */}
         <div className="absolute inset-0 pointer-events-none">
           <motion.div 
@@ -173,18 +173,18 @@ const Portfolio = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h2 className="text-4xl md:text-6xl font-display font-bold mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold mb-6 sm:mb-8">
               <span className="text-black">About Me</span>
             </h2>
             
-            <div className="glass rounded-2xl p-8 md:p-12">
-              <p className="text-xl text-black leading-relaxed mb-8">
+            <div className="glass rounded-2xl p-6 sm:p-8 md:p-12">
+              <p className="text-lg sm:text-xl text-black leading-relaxed mb-6 sm:mb-8">
                 I'm a passionate developer who loves creating innovative digital experiences. 
                 With expertise in modern web technologies, I build applications that are not only 
                 functional but also visually stunning and user-friendly.
               </p>
               
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-8">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 mb-6 sm:mb-8">
                 {['Python', 'HTML', 'CSS', 'C', 'C++'].map((tech) => (
                   <motion.div
                     key={tech}
@@ -224,7 +224,7 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section id="projects" className="relative pt-20 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Abstract Background Elements */}
         <div className="absolute inset-0 pointer-events-none">
           <motion.div 
@@ -288,10 +288,10 @@ const Portfolio = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold mb-4 sm:mb-6">
               <span className="text-black">Featured Projects</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4 sm:px-0">
               A showcase of my latest work and creative endeavors
             </p>
           </motion.div>
@@ -312,7 +312,7 @@ const Portfolio = () => {
             </div>
           ) : projectsData.length > 0 ? (
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}

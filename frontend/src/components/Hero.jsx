@@ -4,14 +4,16 @@ import { ArrowRight, Sparkles } from 'lucide-react'
 
 const Hero = ({ onScrollToProjects }) => {
   return (
-    <div className="relative z-10 w-full h-screen px-8 sm:px-12 lg:px-16">
-      {/* Full Page Layout */}
-      <div className="flex items-center justify-between w-full h-full py-20">
-        <div className="w-1/2 max-w-2xl">
+    <div className="relative z-10 w-full h-screen px-4 sm:px-8 lg:px-16">
+      {/* Mobile-First Responsive Layout */}
+      <div className="flex flex-col lg:flex-row items-center justify-between w-full h-full py-16 lg:py-20">
+        
+        {/* Main Content - Full width on mobile, half on desktop */}
+        <div className="w-full lg:w-1/2 max-w-2xl text-center lg:text-left">
 
-          {/* Main Title */}
+          {/* Main Title - Responsive sizing */}
           <motion.h1
-            className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-black mb-8 tracking-tight text-left"
+            className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-black mb-6 lg:mb-8 tracking-tight leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -25,9 +27,9 @@ const Hero = ({ onScrollToProjects }) => {
             </motion.span>
           </motion.h1>
 
-          {/* Description */}
+          {/* Description - Better mobile spacing */}
           <motion.p
-            className="text-lg text-black mb-10 max-w-md leading-relaxed font-medium text-left"
+            className="text-base sm:text-lg text-black mb-8 lg:mb-10 max-w-md mx-auto lg:mx-0 leading-relaxed font-medium px-4 lg:px-0"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -35,34 +37,33 @@ const Hero = ({ onScrollToProjects }) => {
             The development showcase that keeps your flow with modern tools and built-in graphics
           </motion.p>
 
-          {/* Dotted Line */}
-          <div className="w-32 border-b-2 border-dotted border-gray-400 mb-10"></div>
+          {/* Dotted Line - Centered on mobile */}
+          <div className="w-32 border-b-2 border-dotted border-gray-400 mb-8 lg:mb-10 mx-auto lg:mx-0"></div>
         </div>
 
-        {/* Right Side Stats */}
-        <div className="w-1/2 flex flex-col items-end justify-center h-full">
+        {/* Right Side Stats - Bottom on mobile, right on desktop */}
+        <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-end justify-center mt-8 lg:mt-0">
           <motion.div
-            className="text-right"
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
+            className="text-center lg:text-right"
+            initial={{ opacity: 0, x: 0, y: 30 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <div className="space-y-8">
-              <div>
-                <div className="text-sm text-black">Web based</div>
-                <div className="text-lg font-semibold text-black">/01</div>
+            <div className="flex flex-row lg:flex-col gap-8 lg:gap-8 justify-center lg:justify-end">
+              <div className="text-center lg:text-right">
+                <div className="text-xs sm:text-sm text-black">Web based</div>
+                <div className="text-base sm:text-lg font-semibold text-black">/01</div>
               </div>
-              <div>
-                <div className="text-sm text-black">Collaborative</div>
-                <div className="text-lg font-semibold text-black">/02</div>
+              <div className="text-center lg:text-right">
+                <div className="text-xs sm:text-sm text-black">Collaborative</div>
+                <div className="text-base sm:text-lg font-semibold text-black">/02</div>
               </div>
-              <div>
-                <div className="text-sm text-black">Real-time</div>
-                <div className="text-lg font-semibold text-black">/03</div>
+              <div className="text-center lg:text-right">
+                <div className="text-xs sm:text-sm text-black">Real-time</div>
+                <div className="text-base sm:text-lg font-semibold text-black">/03</div>
               </div>
             </div>
           </motion.div>
-
         </div>
       </div>
 
@@ -135,10 +136,10 @@ const Hero = ({ onScrollToProjects }) => {
       </div>
 
 
-      {/* Futuristic Holographic Design */}
-      <div className="absolute top-1/2 right-1/3 transform -translate-y-1/2 -z-10">
+      {/* Futuristic Holographic Design - Responsive */}
+      <div className="absolute top-1/2 right-1/4 lg:right-1/3 transform -translate-y-1/2 -z-10 scale-50 sm:scale-75 lg:scale-100">
         <motion.div
-          className="relative w-96 h-96"
+          className="relative w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-96"
           initial={{ opacity: 0, rotateY: -90 }}
           animate={{ opacity: 1, rotateY: 0 }}
           transition={{ duration: 1.5, ease: 'easeOut' }}
