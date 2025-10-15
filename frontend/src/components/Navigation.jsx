@@ -140,11 +140,14 @@ const Navigation = () => {
                   <motion.div key={item.name}>
                     <button
                       onClick={() => {
+                        const section = item.section
                         setIsOpen(false)
-                        // Small delay to ensure menu closes before scrolling
-                        setTimeout(() => {
-                          scrollToSection(item.section)
-                        }, 100)
+                        // Use requestAnimationFrame to ensure DOM updates, then add delay
+                        requestAnimationFrame(() => {
+                          setTimeout(() => {
+                            scrollToSection(section)
+                          }, 350) // Match the menu animation duration
+                        })
                       }}
                       className="flex items-center gap-3 w-full px-3 py-2 rounded-md text-base font-medium text-black hover:text-gray-700 hover:bg-gray-100 transition-all duration-300"
                     >
