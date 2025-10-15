@@ -48,7 +48,6 @@ const Navigation = () => {
         behavior: 'smooth'
       })
     }
-    setIsOpen(false)
   }
 
   return (
@@ -141,8 +140,11 @@ const Navigation = () => {
                   <motion.div key={item.name}>
                     <button
                       onClick={() => {
-                        scrollToSection(item.section)
                         setIsOpen(false)
+                        // Small delay to ensure menu closes before scrolling
+                        setTimeout(() => {
+                          scrollToSection(item.section)
+                        }, 100)
                       }}
                       className="flex items-center gap-3 w-full px-3 py-2 rounded-md text-base font-medium text-black hover:text-gray-700 hover:bg-gray-100 transition-all duration-300"
                     >
