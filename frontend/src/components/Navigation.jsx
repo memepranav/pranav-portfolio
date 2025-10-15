@@ -35,7 +35,7 @@ const Navigation = () => {
       } else if (sectionId === 'about') {
         headerHeight = 140 // More space for about section
       } else if (sectionId === 'projects') {
-        headerHeight = 60 // Even less offset to move projects section up more
+        headerHeight = 30 // Minimal offset to center the entire projects section with buttons visible
       } else if (sectionId === 'hero') {
         headerHeight = 0 // No offset for hero section
       }
