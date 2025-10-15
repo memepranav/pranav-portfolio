@@ -35,7 +35,7 @@ const Navigation = () => {
       } else if (sectionId === 'about') {
         headerHeight = 140 // More space for about section
       } else if (sectionId === 'projects') {
-        headerHeight = -100 // Negative offset to scroll past the section start and show more bottom content
+        headerHeight = 40 // Small positive offset to show the title while keeping cards visible
       } else if (sectionId === 'hero') {
         headerHeight = 0 // No offset for hero section
       }

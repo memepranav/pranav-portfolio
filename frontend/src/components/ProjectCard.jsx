@@ -34,24 +34,24 @@ const ProjectCard = ({ project, index }) => {
       className="group relative"
     >
       <motion.div
-        className="glass rounded-2xl p-4 sm:p-6 h-full border border-white/5 transition-all duration-500 overflow-hidden"
+        className="glass rounded-2xl p-3 sm:p-4 h-full border border-white/5 transition-all duration-500 overflow-hidden"
         whileHover={{ 
           y: -8,
           transition: { duration: 0.3, ease: "easeOut" }
         }}
       >
         {/* Project Image */}
-        <div className="relative mb-4 sm:mb-6 overflow-hidden rounded-xl bg-gradient-to-br from-primary-900/20 to-accent-900/20">
+        <div className="relative mb-3 sm:mb-4 overflow-hidden rounded-xl bg-gradient-to-br from-primary-900/20 to-accent-900/20">
           {project.imageURL ? (
             <motion.img
               src={project.imageURL}
               alt={project.title}
-              className="w-full h-40 sm:h-48 object-cover"
+              className="w-full h-32 sm:h-40 object-cover"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             />
           ) : (
-            <div className="w-full h-40 sm:h-48 flex items-center justify-center">
+            <div className="w-full h-32 sm:h-40 flex items-center justify-center">
               <div className="text-4xl sm:text-6xl font-bold text-primary-400/20">
                 {project.title.charAt(0)}
               </div>
@@ -77,7 +77,7 @@ const ProjectCard = ({ project, index }) => {
             )}
             {project.underConstruction && (
               <motion.div
-                className="px-2 py-1 bg-amber-600/90 backdrop-blur-sm rounded-full text-xs font-medium text-white shadow-lg"
+                className="px-2 py-1 bg-blue-600/90 backdrop-blur-sm rounded-full text-xs font-medium text-white shadow-lg"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.3 }}
@@ -89,10 +89,10 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         {/* Content */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           {/* Title and Date */}
           <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 sm:gap-4">
-            <h3 className="text-lg sm:text-xl font-semibold text-black leading-tight">
+            <h3 className="text-base sm:text-lg font-semibold text-black leading-tight">
               {project.title}
             </h3>
             {project.createdAt && (
