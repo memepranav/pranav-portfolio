@@ -141,13 +141,32 @@ const Navigation = () => {
                     <button
                       onClick={() => {
                         const section = item.section
+                        // Close menu and scroll directly without delay
                         setIsOpen(false)
-                        // Use requestAnimationFrame to ensure DOM updates, then add delay
-                        requestAnimationFrame(() => {
-                          setTimeout(() => {
-                            scrollToSection(section)
-                          }, 350) // Match the menu animation duration
-                        })
+                        
+                        // Direct scroll implementation for mobile
+                        const element = document.getElementById(section)
+                        if (element) {
+                          let headerHeight = 100
+                          
+                          if (section === 'contact') {
+                            headerHeight = 60
+                          } else if (section === 'about') {
+                            headerHeight = 140
+                          } else if (section === 'projects') {
+                            headerHeight = 40
+                          } else if (section === 'hero') {
+                            headerHeight = 0
+                          }
+                          
+                          const elementPosition = element.offsetTop
+                          const offsetPosition = elementPosition - headerHeight
+                          
+                          window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                          })
+                        }
                       }}
                       className="flex items-center gap-3 w-full px-3 py-2 rounded-md text-base font-medium text-black hover:text-gray-700 hover:bg-gray-100 transition-all duration-300"
                     >
