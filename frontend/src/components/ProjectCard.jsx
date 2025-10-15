@@ -92,7 +92,7 @@ const ProjectCard = ({ project, index }) => {
         <div className="space-y-4">
           {/* Title and Date */}
           <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 sm:gap-4">
-            <h3 className="text-lg sm:text-xl font-semibold text-white leading-tight">
+            <h3 className="text-lg sm:text-xl font-semibold text-black leading-tight">
               {project.title}
             </h3>
             {project.createdAt && (
