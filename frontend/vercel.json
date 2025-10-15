@@ -7,9 +7,17 @@
       "config": {
         "distDir": "dist"
       }
+    },
+    {
+      "src": "../backend/server.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "../backend/server.js"
+    },
     {
       "src": "/html-projects/(.*)",
       "dest": "/html-projects/$1"
@@ -18,10 +26,5 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ],
-  "functions": {
-    "app/api/hello.js": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  ]
 }
