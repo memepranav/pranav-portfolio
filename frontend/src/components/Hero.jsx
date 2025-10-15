@@ -5,8 +5,8 @@ import { ArrowRight, Sparkles } from 'lucide-react'
 const Hero = ({ onScrollToProjects }) => {
   return (
     <div className="relative z-10 w-full h-screen px-4 sm:px-8 lg:px-16">
-      {/* Mobile-First Responsive Layout */}
-      <div className="flex flex-col lg:flex-row items-center justify-between w-full h-full py-16 lg:py-20">
+      {/* Mobile-First Responsive Layout - Properly Centered */}
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full h-full pt-20 pb-16 lg:py-0">
         
         {/* Main Content - Full width on mobile, half on desktop */}
         <div className="w-full lg:w-1/2 max-w-2xl text-center lg:text-left">
@@ -42,7 +42,7 @@ const Hero = ({ onScrollToProjects }) => {
         </div>
 
         {/* Right Side Stats - Bottom on mobile, right on desktop */}
-        <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-end justify-center mt-8 lg:mt-0">
+        <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-end justify-center mt-12 lg:mt-0">
           <motion.div
             className="text-center lg:text-right"
             initial={{ opacity: 0, x: 0, y: 30 }}
