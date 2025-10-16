@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import Portfolio from './pages/Portfolio'
 import About from './pages/About'
 
@@ -13,6 +14,7 @@ function App() {
           {/* Catch all route - redirect to home */}
           <Route path="*" element={<Portfolio />} />
         </Routes>
+        <Analytics />
       </div>
     </Router>
   )
